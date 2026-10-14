@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1100.0"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.poli.Sw2.Examen2.Infraestuctura.UI.SeguroController">
+    <children>
+        <VBox spacing="12.0" AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0"
+              AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <padding>
+                <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+            </padding>
+
+            <Label text="Gestión de Seguros" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="12.0">
+                <children>
+                    <VBox spacing="4.0" prefWidth="220.0">
+                        <children>
+                            <Label text="Número"/>
+                            <TextField fx:id="txtNumero" promptText="Ej: VIDA-001"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="220.0">
+                        <children>
+                            <Label text="Fecha Expedición"/>
+                            <DatePicker fx:id="dpFechaExpedicion" prefWidth="220.0"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="220.0">
+                        <children>
+                            <Label text="Valor"/>
+                            <TextField fx:id="txtValor" promptText="Ej: 1500000"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="220.0">
+                        <children>
+                            <Label text="Estado"/>
+                            <TextField fx:id="txtEstado" promptText="Activo / Pendiente"/>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <HBox spacing="12.0">
+                <children>
+                    <VBox spacing="4.0" prefWidth="300.0">
+                        <children>
+                            <Label text="Tipo de seguro"/>
+                            <ComboBox fx:id="cbTipoSeguro" prefWidth="300.0" promptText="Seleccione tipo"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="350.0">
+                        <children>
+                            <Label text="Asegurado"/>
+                            <ComboBox fx:id="cbAsegurado" prefWidth="350.0" promptText="Seleccione asegurado"/>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <HBox spacing="12.0">
+                <children>
+                    <VBox spacing="4.0" prefWidth="320.0">
+                        <children>
+                            <Label text="Beneficiario"/>
+                            <TextField fx:id="txtBeneficiario" promptText="Nombre beneficiario"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="250.0">
+                        <children>
+                            <Label text="Parentesco"/>
+                            <TextField fx:id="txtParentesco" promptText="Ej: Hija"/>
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="4.0" prefWidth="250.0">
+                        <children>
+                            <Label text="Marca"/>
+                            <TextField fx:id="txtMarca" promptText="Ej: Mazda"/>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <HBox spacing="12.0">
+                <children>
+                    <Button fx:id="btnGuardar" text="Guardar" prefWidth="120.0"/>
+                    <Button fx:id="btnEditar" text="Editar" prefWidth="120.0"/>
+                    <Button fx:id="btnEliminar" text="Eliminar" prefWidth="120.0"/>
+                    <Button fx:id="btnLimpiar" text="Limpiar" prefWidth="120.0"/>
+                </children>
+            </HBox>
+
+            <HBox spacing="12.0">
+                <children>
+                    <VBox spacing="4.0" prefWidth="260.0">
+                        <children>
+                            <Label text="Buscar por número"/>
+                            <TextField fx:id="txtBuscar" promptText="Ej: VIDA-001"/>
+                        </children>
+                    </VBox>
+                    <Button fx:id="btnBuscar" text="Buscar" prefWidth="120.0" alignment="CENTER"/>
+                </children>
+            </HBox>
+
+            <TableView fx:id="tblSeguros" VBox.vgrow="ALWAYS" prefHeight="420.0">
+                <columns>
+                    <TableColumn fx:id="colNumero" text="Número" prefWidth="120.0"/>
+                    <TableColumn fx:id="colFechaExpedicion" text="Fecha expedición" prefWidth="150.0"/>
+                    <TableColumn fx:id="colValor" text="Valor" prefWidth="140.0"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="120.0"/>
+                    <TableColumn fx:id="colAsegurado" text="Asegurado" prefWidth="230.0"/>
+                    <TableColumn fx:id="colTipo" text="Tipo" prefWidth="140.0"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</AnchorPane>
